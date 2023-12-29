@@ -1,8 +1,9 @@
+require('dotenv').config()
 const mongoose=require("mongoose");
-const mongoURI="mongodb://0.0.0.0:27017/mynotebook";
+ const mongoURI=process.env.MONGO_URI;
 
 const connectToMongo=()=>{
-    mongoose.connect(mongoURI);
+    mongoose.connect(process.env.MONGO_URI);
     console.log("Mongoose Connected");
 }
 module.exports=connectToMongo;
